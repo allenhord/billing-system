@@ -1,37 +1,36 @@
-//personTypeImp.cpp
+//patientTypeImp.cpp
    
 #include <iostream> 
 #include <string>
-#include "personType.h"
+#include "patientType.h"
 
 using namespace std;
 
-void personType::print() const
+void patientType::print() const
 {
-    cout << firstName << " " << lastName;
+	personType::print();
+	cout << "\nID: " << ID <<
+		"\nDOB: " << dateOfBirth <<
+		"\nPhysician: " << attendingPhysician <<
+		"\nAdmit Date: " << admitDate <<
+		"\nDischarge Date: " << dischargeDate;
 }
 
-void personType::setName(string first, string last)
+void patientType::setInfo(string id, string fName, string lName,
+	int bDay, int bMth, int bYear, string docFrName, string docLaName,
+	string docSpl, int admDay, int admMth, int admYear,
+	int disChDay, int disChMth, int disChYear)
 {
-    firstName = first;
-    lastName = last;
+	personType::setName(fName, lName);
+	ID = id;
+	//set DOB will go here
+	attendingPhysician = docFrName + " " + docLaName;
+	//TO BE CONTINUED
 }
 
-string personType::getFirstName() const
-{
-    return firstName;
-}
 
-string personType::getLastName() const
-{
-    return lastName;
-}
-
-    //constructor
-personType::personType(string first, string last) 
-
-{ 
-    firstName = first;
-    lastName = last;
-}
-
+string ID;
+dateType dateOfBirth;
+doctorType attendingPhysician;
+dateType admitDate;
+dateType dischargeDate;
