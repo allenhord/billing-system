@@ -27,10 +27,3 @@ void patientType::setInfo(string id, string fName, string lName,
 	attendingPhysician = docFrName + " " + docLaName;
 	//TO BE CONTINUED
 }
-
-
-string ID;
-dateType dateOfBirth;
-doctorType attendingPhysician;
-dateType admitDate;
-dateType dischargeDate;
