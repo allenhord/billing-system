@@ -33,6 +33,98 @@ void patientType::setInfo(string id, string fName, string lName,
 	dischargeDate.setDate(disChMth, disChDay, disChYear);
 }
 
+void patientType::setID(string id)
+{
+	ID = id;
+}
+
+string patientType::getID()
+{
+	return ID;
+}
+
+void patientType::setBirthDate(int bDay = 1, int bMth = 1, int bYear = 1900)
+{
+	dateOfBirth.setDate(bMth, bDay, bYear);
+}
+
+int patientType::getBirthDay()
+{
+	return dateOfBirth.getDay;
+}
+int patientType::getBirthMonth()
+{
+	return dateOfBirth.getMonth;
+}
+
+int patientType::getBirthYear()
+{
+	return dateOfBirth.getYear;
+}
+
+void patientType::setDoctorName(string fName, string lName)
+{
+	attendingPhysician = doctorType(fName, lName);
+}
+
+void patientType::setDoctorSpl(string spl)
+{
+	attendingPhysician.setSpeciality = spl;
+}
+
+string patientType::getDoctorFName()
+{
+	return attendingPhysician.getFirstName;
+}
+
+string patientType::getDoctorLName()
+{
+	return attendingPhysician.getLastName;
+}
+
+string patientType::getDoctorSpl()
+{
+	return attendingPhysician.getSpeciality;
+}
+
+void patientType::setAdmDate(int admDay, int admMth, int admYear)
+{
+	admitDate.setDate(admDay, admMth, admYear);
+}
+
+int patientType::getAdmDay()
+{
+	admitDate.getDay;
+}
+int patientType::getAdmMonth()
+{
+	admitDate.getMonth;
+}
+
+int patientType::getAdmYear()
+{
+	admitDate.getYear;
+}
+
+void patientType::setDisDate(int disDay, int disMth, int disYear)
+{
+	dischargeDate.setDate(disDay, disMth, disYear);
+}
+
+int patientType::getDisDay()
+{
+	return dischargeDate.getDay;
+}
+int patientType::getDisMonth()
+{
+	return dischargeDate.getMonth;
+}
+
+int patientType::getDisYear()
+{
+	return dischargeDate.getYear;
+}
+
 patientType::patientType(string id, string fName, string lName,
 	int bDay, int bMth, int bYear,
 	string docFrName, string docLaName, string docSpl,
@@ -46,9 +138,3 @@ patientType::patientType(string id, string fName, string lName,
 {
 	ID = id;
 }
-
-//string ID;
-//dateType dateOfBirth;
-//doctorType attendingPhysician;
-//dateType admitDate;
-//dateType dischargeDate;
