@@ -43,23 +43,23 @@ string patientType::getID()
 	return ID;
 }
 
-void patientType::setBirthDate(int bDay = 1, int bMth = 1, int bYear = 1900)
+void patientType::setBirthDate(int bDay, int bMth, int bYear)
 {
 	dateOfBirth.setDate(bMth, bDay, bYear);
 }
 
 int patientType::getBirthDay()
 {
-	return dateOfBirth.getDay;
+	return dateOfBirth.getDay();
 }
 int patientType::getBirthMonth()
 {
-	return dateOfBirth.getMonth;
+	return dateOfBirth.getMonth();
 }
 
 int patientType::getBirthYear()
 {
-	return dateOfBirth.getYear;
+	return dateOfBirth.getYear();
 }
 
 void patientType::setDoctorName(string fName, string lName)
@@ -69,22 +69,22 @@ void patientType::setDoctorName(string fName, string lName)
 
 void patientType::setDoctorSpl(string spl)
 {
-	attendingPhysician.setSpeciality = spl;
+	attendingPhysician.setSpeciality(spl);
 }
 
 string patientType::getDoctorFName()
 {
-	return attendingPhysician.getFirstName;
+	return attendingPhysician.getFirstName();
 }
 
 string patientType::getDoctorLName()
 {
-	return attendingPhysician.getLastName;
+	return attendingPhysician.getLastName();
 }
 
 string patientType::getDoctorSpl()
 {
-	return attendingPhysician.getSpeciality;
+	return attendingPhysician.getSpeciality();
 }
 
 void patientType::setAdmDate(int admDay, int admMth, int admYear)
@@ -94,16 +94,16 @@ void patientType::setAdmDate(int admDay, int admMth, int admYear)
 
 int patientType::getAdmDay()
 {
-	admitDate.getDay;
+	return admitDate.getDay();
 }
 int patientType::getAdmMonth()
 {
-	admitDate.getMonth;
+	return admitDate.getMonth();
 }
 
 int patientType::getAdmYear()
 {
-	admitDate.getYear;
+	return admitDate.getYear();
 }
 
 void patientType::setDisDate(int disDay, int disMth, int disYear)
@@ -113,16 +113,16 @@ void patientType::setDisDate(int disDay, int disMth, int disYear)
 
 int patientType::getDisDay()
 {
-	return dischargeDate.getDay;
+	return dischargeDate.getDay();
 }
 int patientType::getDisMonth()
 {
-	return dischargeDate.getMonth;
+	return dischargeDate.getMonth();
 }
 
 int patientType::getDisYear()
 {
-	return dischargeDate.getYear;
+	return dischargeDate.getYear();
 }
 
 patientType::patientType(string id, string fName, string lName,
