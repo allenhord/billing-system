@@ -51,10 +51,12 @@ public:
                 int admDay = 1, int admMth = 1, int admYear = 1900,
                 int disChDay = 1, int disChMth = 1, int disChYear = 1900);
    
+
  private:
     string ID;
     dateType dateOfBirth;
-    doctorType attendingPhysicain;
+    //  RKT : cian verse cain.
+    doctorType attendingPhysician;
     dateType admitDate;
     dateType dischargeDate; 
 };
