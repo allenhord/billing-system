@@ -6,18 +6,22 @@
 
 using namespace std;
 
-void billType::printBill() const
-{
-	cout << "Patient ID: " << ID <<
-		"\nPharmacy charges: " << pharmacyCharges <<
-		"\nRoom rent: " << roomRent <<
-		"\nDoctor fee: " << doctorFee << endl;
-}
-
 string ID;
 double pharmacyCharges;
 double roomRent;
 double doctorFee;
+
+void billType::printBill() const
+{
+
+// RKT: Not printed....
+cout << " printbill " << endl;
+
+	cout << "Patient ID: " << billType.getID() <<
+		"\nPharmacy charges: $" << billType.getPharmacyCharges() <<
+		"\nRoom rent: $" << billType.getRoomRent() <<
+		"\nDoctor fee: $" << billType.getDoctorFee() << endl;
+}
 
 void billType::setInfo(string id, double phCharges, double rRent,
 	double docFee)
@@ -26,11 +30,20 @@ void billType::setInfo(string id, double phCharges, double rRent,
 	pharmacyCharges = phCharges;
 	roomRent = rRent;
 	doctorFee = docFee;
+
+	// RKT: not printed.
+	cout << " ID : " << ID << " roomRent : " << roomRent << endl;
+
 };
 
 void billType::setID(string id)
 {
 	ID = id;
+}
+
+string billType::getID()
+{
+	return ID;
 }
 
 void billType::setPharmacyCharges(double charges)
@@ -59,12 +72,12 @@ double billType::getRoomRent()
 
 void billType::updateRoomRent(double charges)
 {
-	roomRent = roomRent + charges;
+	roomRent=roomRent+charges;
 }
 
 void billType::setDoctorFee(double charges)
 {
-	doctorFee = charges;
+	doctorFee=charges;
 }
 
 double billType::getDoctorFee()

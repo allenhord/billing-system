@@ -55,7 +55,6 @@ public:
  private:
     string ID;
     dateType dateOfBirth;
-    //  RKT : cian verse cain.
     doctorType attendingPhysician;
     dateType admitDate;
     dateType dischargeDate; 

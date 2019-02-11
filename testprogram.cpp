@@ -11,6 +11,7 @@
 #include <iomanip>		// setprecision function.
 #include <iostream>
 #include "patientType.h"
+#include "billType.h"
 #include "testprogram.h"
 
 using namespace std;
@@ -22,10 +23,18 @@ char menu();
 int menu2();
 void clearScreen();
 void display(void);
+void setPatientRecords(patientType patients[]);
+void setBillRecords(billType bills[]);
 
 //===========================================================================
 
 int main(int argc, char* argv[]) {
+
+int	numberOfPatients = 3;		// Number of overall patients in system. 
+patientType patients[numberOfPatients];	// Array of patientType class.
+								// Limited by 'numberOfPatients' variable.
+billType bills[numberOfPatients];	// Array of billType class.
+								// Limited by 'numberOfPatients' variable.
 
 //======================
 bool	loop;
@@ -97,14 +106,36 @@ cout << fixed << setprecision(2);
 
 // =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =
 
+setPatientRecords(patients);
+	// Loads patient list within Hospital by populating patient array.
+
+setBillRecords(bills);
+	// Loads expenses per patient within Hospital by populating bill array.
+
 while ( loop ) {
 
 	clearScreen();
 
 //  //	display();
 
+
+	cout << "=====================================" << endl;
+	patients[0].print();
+	cout << "=====================================" << endl;
+	//patients[1].print();
+	//cout << "=====================================" << endl;
+	//patients[2].print();
+	//cout << "=====================================" << endl;
+
+	bills[1].printBill();
+	cout << "=====================================" << endl;
+	bills[2].printBill();
+	cout << "=====================================" << endl;
+
 	categoryIn=menu();
 
+	// menu3();
+ 
 	switch ( categoryIn ) {
 		case 'i':
 		case 'I':
@@ -144,17 +175,6 @@ while ( loop ) {
 			cin >> ubMth;
 			cout << "Birth year: ";
 			cin >> ubYear;
-
-			//if (kwhIn>1000) {
-			//	tempInt=(kwhIn-1000);
-			//	tempFloat=((float)tempInt)*(0.045);
-			//	displayUsed=kwhIn;
-			//	displayCost=tempFloat+60.00;
-			//} else {
-			//	tempFloat=((float)kwhIn);
-			//	displayUsed=kwhIn;
-			//	displayCost=tempFloat;
-			//}
 
 			//cout << "\n\n\t-----------------------------------------------";
 			//cout << "\n\n\t Your Commercial service for Account : "
@@ -281,13 +301,19 @@ void menu3()
 	int udisChMth;
 	int udisChYear;
 
-	
-	patientType newPatient("123456", "Keith", "Richards",
-		18, 12, 1943, "Robert", "Freymann", "General Practioner",
-		1, 1, 2019, 2, 1, 2019);
+// patientType patients[numberOfPatients];	// Array of patientType class.
 
-	newPatient.print();
+	//newPatient.print();
 
+//	cout << "=====================================" << endl;
+//	patients[0].print();
+//	cout << "=====================================" << endl;
+//	patients[1].print();
+//	cout << "=====================================" << endl;
+//	patients[2].print();
+//	cout << "=====================================" << endl;
+
+/**
 	cout << "\nChange patient data:\nID: ";
 	cin >> uID;
 	cout << "First name: ";
@@ -329,6 +355,8 @@ void menu3()
 	cout << "Enter any key to continue: ";
 	cin >> userinput;
 	// if (userinput)
+
+**/
 
 }
 
@@ -432,5 +460,52 @@ cout << "\n\n\t-----------------------------------------------";
 //	cout << endl;
 
 //============================================================================
+
+/**
+ * Function setPatientRecords
+ *		Adds fixed patient data to patients array.
+ *
+ * Parameters 
+ *	 patientType patients array.
+**/
+void setPatientRecords(patientType patients[])
+{
+  	patients[0].setInfo("0", "Keith", "Richards",
+		18, 12, 1943, "Robert", "Freymann", "General Practioner",
+		15, 1, 2019, 1, 2, 2019);
+
+	patients[1].setInfo("1", "David", "Robinson",
+		2, 4, 1949, "Ric", "Ocasek", "General Practioner",
+		10, 1, 2019, 21, 1, 2019);
+
+	patients[2].setInfo("2", "Bobby", "Elliott",
+		8, 12, 1941, "Allan", "Clarke", "General Practioner",
+		4, 12, 2018, 18, 1, 2019);
+  
+} // end: setPatientRecords
+
+//============================================================================
+
+/**
+ * Function setBillRecords
+ *		Adds fixed patient expense data to bill array.
+ *
+ * Parameters 
+ *	 billType bill array.
+**/
+void setBillRecords(billType bills[])
+{
+
+	// rkt: Prints this line:
+	cout << " set bills record function..." << endl;
+
+	bills[0].setInfo("0", 500, 1500, 1000);
+
+	bills[1].setInfo("1", 400, 1100, 2300);
+
+	bills[2].setInfo("2", 300, 2200, 800);
+
+};  // end: setBillRecords 
+
 
 /**/

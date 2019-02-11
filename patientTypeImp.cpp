@@ -8,6 +8,7 @@ using namespace std;
 
 void patientType::print() const
 {
+	cout << "Patient: ";
 	personType::print();
 	cout << "\nID: " << ID << "\nDOB: ";
 	dateOfBirth.printDate();
