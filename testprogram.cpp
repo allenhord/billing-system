@@ -8,7 +8,6 @@
 //*
 //***************************************************************************
 #include <cstdlib>		// system function.
-#include <iomanip>		// setprecision function.
 #include <iostream>
 #include "patientType.h"
 #include "billType.h"
@@ -20,9 +19,9 @@ using namespace std;
 
 void menu3();
 char menu();
-void menu2();
+
 void clearScreen();
-void display(void);
+
 void setPatientRecords(patientType patients[]);
 void setBillRecords(billType bills[]);
 
@@ -36,19 +35,7 @@ patientType patients[numberOfPatients];	// Array of patientType class.
 billType bills[numberOfPatients];	// Array of billType class.
 								// Limited by 'numberOfPatients' variable.
 
-//======================
-//bool	loop;
-//bool	notGood;
-//bool	exitProg;
-//
-//bool	debug;
 //=======================
-char	categoryIn;
-char	waitState;
-//=======================
-
-//=======================
-
 	string uID;
 	string ufName;
 	string ulName;
@@ -109,6 +96,10 @@ char	waitState;
 		; // No Operative
 	}
 
+	clearScreen();
+
+	cout << "\n\n=====================================" << endl;
+	cout << "\n\n  set  and get some stuff.\n\n";
 
 	bills[0].printBill();
 	cout << "=====================================" << endl;
@@ -123,6 +114,45 @@ char	waitState;
 	{
 		; // No Operative
 	}
+
+	clearScreen();
+
+	cout << "\n\n=====================================" << endl;
+	cout << "\n\n  set  and get patient stuff.\n\n";
+
+	cout << "=====================================" << endl;
+	cout << "\n\n  set  and get patient stuff.\n\n";
+
+	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
+	while ( ! ( cin.get() == '\n') )
+	{
+		; // No Operative
+	}
+
+
+	clearScreen();
+
+	cout << "\n\n=====================================" << endl;
+	cout << "\n\n  set  and get billing stuff.\n\n";
+
+	cout << "=====================================" << endl;
+	cout << "\n\n  set  and get billing stuff.\n\n";
+
+	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
+	while ( ! ( cin.get() == '\n') )
+	{
+		; // No Operative
+	}
+
+	cout << "\n\n=====================================";
+	cout << "\n\n  Done.\n\n";
+	cout << "=====================================\n";
+
+
+
+	// patients[0].setID(uID);	//set patient 0 ID to user input AH
+	// bills[0].setID(uID);	//set bill 0 ID to user input AH
+			//include some way to select a different patient/bill, maybe list IDs, select ID? toggle? AH
 
 
 //			cout << "\nChange patient data:\nID: ";
@@ -156,30 +186,8 @@ char	waitState;
 
 
 //			cout << " pRint current record?";
-
-
-
 //============================================================================
 
-	cout << "\n\n\t ==================================" << endl;
-//	cout << "\n\n\t     To exit, type an \'x\'.";
-//	cout << "\n\n\t     Type any other key to continue." << endl;
-
-//	cin >> categoryIn;
-
-/**
-	if ( ! (categoryIn=='x') ) {
-		; 	// no-op
-	} else {
-		// Leave loop and program.
-		loop=false;
-		exitProg=true;
-		notGood=false;
-		//
-		cout << "\n\t Exiting program.\n" << endl;
-	}
-
-**/
 
     return 0;
 
@@ -280,29 +288,12 @@ replyIn=' ';
 	cout << "\n\n\t\t  Enter service category: ";
 
 	cin >> replyIn;
-
-	return replyIn;
 **/
 
+	return replyIn;
+
+
 }  // menu
-
-//============================================================================
-
-void menu2 () {
-
-	cout << "\n\t  Enter Customer Account Number: ";
-	//cin >> accountIn;
-
-}
-
-//============================================================================
-
-void display(void) {
-
-cout << "\n\t-----------------------------------------------";
-cout << "\n\n\t-----------------------------------------------";
-
-}  // display
 
 //============================================================================
 
