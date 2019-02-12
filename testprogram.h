@@ -1,10 +1,10 @@
 
 // Assign OS appropriate screen clearing command. 
 #ifdef __linux__
-	// static const std::string OpSys="Linux";
+	// static const string OpSys="Linux";
 	#define CLR "clear"
 #else
-	// static const std::string OpSys="Windows";
+	// static const string OpSys="Windows";
 	#define CLR "cls"
 #endif
 
