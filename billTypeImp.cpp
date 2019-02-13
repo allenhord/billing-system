@@ -1,15 +1,10 @@
-//billTypeImp.cpp
+//implementation file for billTypeImp
    
 #include <iostream> 
 #include <string>
 #include "billType.h"
 
 using namespace std;
-
-string ID;
-double pharmacyCharges;
-double roomRent;
-double doctorFee;
 
 void billType::printBill() const
 {
