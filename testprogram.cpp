@@ -7,7 +7,7 @@
 //*   Hospital billing system created from class personType.
 //*
 //***************************************************************************
-#include <cstdlib>		// system function.
+#include <cstdlib>		// system() function.
 #include <iostream>
 #include "patientType.h"
 #include "billType.h"
@@ -51,45 +51,34 @@ billType bills[numberOfPatients];	// Array of billType class.
 	//int uadmDay;
 	//int uadmMth;
 	//int uadmYear;
-	//int udisChDay;
-	//int udisChMth;
-	//int udisChYear;
-//=======================
+
+	int udisChDay;
+	int udisChMth;
+	int udisChYear;
 
 //===========================================================================
-
-// Set floating-point number format.
-// cout << fixed << setprecision(2);
-
-// =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =
 
 	clearScreen();
 
 	cout << "\n\t-------------------------------------------------";
-	cout << "\n\t     Welcome to the Hospital Billing System." << endl;
+	cout << "\n\t     Welcome to the Hospital Billing System.";
+	cout << "\n\t-------------------------------------------------" << endl;
 
-	cout << "\n\t Loading initial patient data...";
-
-	setPatientRecords(patients);
 	// Loads patient list within Hospital by populating patient array.
+	setPatientRecords(patients);
 
-	cout << "\n\t Loading initial patient expense data...";
-
-	setBillRecords(bills);
 	// Loads expenses per patient within Hospital by populating bill array.
+	setBillRecords(bills);
 
+	cout << "\n\t     Current patient personal data:" << endl << endl;
 
-	// display();
-
-
-	cout << "=====================================" << endl;
 	patients[0].print();
 	cout << "=====================================" << endl;
 	patients[1].print();
 	cout << "=====================================" << endl;
 	patients[2].print();
 
-	cout << "\n\n\t === === === === === === === === -==" << endl;
+	cout << "\n\n\t === === === === === === === === ===";
 	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
 	if (cin.get() == '\n') 
 	{
@@ -98,17 +87,15 @@ billType bills[numberOfPatients];	// Array of billType class.
 
 	clearScreen();
 
-	cout << "\n\n=====================================" << endl;
-	cout << "\n\n  set  and get some stuff.\n\n";
+	cout << "\n\t     Current patient billing data:" << endl << endl;
 
 	bills[0].printBill();
 	cout << "=====================================" << endl;
 	bills[1].printBill();
 	cout << "=====================================" << endl;
 	bills[2].printBill();
-	cout << "=====================================" << endl;
 
-
+	cout << "\n\n\t === === === === === === === === ===";
 	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
 	while ( ! ( cin.get() == '\n') )
 	{
@@ -117,12 +104,30 @@ billType bills[numberOfPatients];	// Array of billType class.
 
 	clearScreen();
 
-	cout << "\n\n=====================================" << endl;
-	cout << "\n\n  set  and get patient stuff.\n\n";
+	udisChDay=patients[0].getDisDay();
+	udisChMth=patients[0].getDisMonth();
+	udisChYear=patients[0].getDisYear();
 
-	cout << "=====================================" << endl;
-	cout << "\n\n  set  and get patient stuff.\n\n";
+	cout << "\n=====================================";
+	cout << "\n\n Current discharge date for patient 101.";
+	cout << "\n\n-------------------------------------";
+	cout << "\n\n  Month: " << udisChMth << " Day: " << udisChDay << \
+		" Year: " << udisChYear << "\n";
+	cout << "\n-------------------------------------";
+	// Update Discharge date.
+	patients[0].setDisDate( 10, 21, 3145);
 
+	udisChDay=patients[0].getDisDay();
+	udisChMth=patients[0].getDisMonth();
+	udisChYear=patients[0].getDisYear();
+
+	cout << "\n\nUpdated discharge date for Patient 101.";
+	cout << "\n\n-------------------------------------";
+	cout << "\n\n  Month: " << udisChMth << " Day: " << udisChDay << \
+		" Year: " << udisChYear << "\n";
+	cout << "\n=====================================" << endl;
+
+	cout << "\n\n\t === === === === === === === === ===";
 	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
 	while ( ! ( cin.get() == '\n') )
 	{
@@ -138,6 +143,7 @@ billType bills[numberOfPatients];	// Array of billType class.
 	cout << "=====================================" << endl;
 	cout << "\n\n  set  and get billing stuff.\n\n";
 
+	cout << "\n\n\t === === === === === === === === ===";
 	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
 	while ( ! ( cin.get() == '\n') )
 	{
@@ -149,10 +155,6 @@ billType bills[numberOfPatients];	// Array of billType class.
 	cout << "=====================================\n";
 
 
-
-	// patients[0].setID(uID);	//set patient 0 ID to user input AH
-	// bills[0].setID(uID);	//set bill 0 ID to user input AH
-			//include some way to select a different patient/bill, maybe list IDs, select ID? toggle? AH
 
 
 //			cout << "\nChange patient data:\nID: ";
@@ -184,10 +186,7 @@ billType bills[numberOfPatients];	// Array of billType class.
 //			cout << "Discharge month: ";		cin >> udisChMth;
 //			cout << "Discharge year: ";			cin >> udisChYear;
 
-
-//			cout << " pRint current record?";
 //============================================================================
-
 
     return 0;
 
@@ -198,23 +197,10 @@ billType bills[numberOfPatients];	// Array of billType class.
 void menu3()
 {
 
-// patientType patients[numberOfPatients];	// Array of patientType class.
-
-	//newPatient.print();
-
-
 /**
 	cout << "\nChange patient data:\nID: ";
 	cin >> uID;
-	cout << "First name: ";
-	cin >> ufName;
-	cout << "Last name: ";
-	cin >> ulName;
-	cout << "Birth day: ";
-	cin >> ubDay;
-	cout << "Birth month: ";
-	cin >> ubMth;
-	cout << "Birth year: ";
+
 	cin >> ubYear;
 	cout << "Doctor first name: ";
 	cin >> udocFrName;
@@ -228,6 +214,7 @@ void menu3()
 	cin >> uadmMth;
 	cout << "Admission year: ";
 	cin >> uadmYear;
+
 	cout << "Discharge day: ";
 	cin >> udisChDay;
 	cout << "Discharge month: ";
@@ -235,16 +222,6 @@ void menu3()
 	cout << "Discharge year: ";
 	cin >> udisChYear;
 	cout << endl;
-
-	newPatient.setInfo(uID, ufName, ulName, ubDay, ubMth,
-		ubYear, udocFrName, udocLaName, udocSpl, uadmDay,
-		uadmMth, uadmYear, udisChDay, udisChMth, udisChYear);
-
-	newPatient.print();
-
-	cout << "Enter any key to continue: ";
-	cin >> userinput;
-	// if (userinput)
 
 **/
 
@@ -258,42 +235,6 @@ void clearScreen() {
 	system( CLR );
 
 }
-
-//============================================================================
-
-
-char menu () {
-
-char	replyIn;
-
-replyIn=' ';
-
-/**
-	cout << "\n\t-------------------------------------------------";
-	cout << "\n\t     Welcome to the Hospital Billing System." << endl;	//print greeting
-
-	cout << "\n\n\t  To add or update record data: ";
-
-	cout << "\n\t\t  Enter \'I\' for Patient ID.";
-	cout << "\n\t\t  Enter \'P\' for Patient data.";
-	cout << "\n\t\t  Enter \'D\' for Doctor data.";
-	cout << "\n\t\t  Enter \'A\' for Admission data.";
-	cout << "\n\t\t  Enter \'S\' for diScharge data.";
-	cout << "\n\t\t  Enter \'R\' for pRint current record.";
-
-	cout << "\n\n\t\t  Enter \'X\' to exit.";
-
-	cout << "\n\n\t\t---------------------------------";
-
-	cout << "\n\n\t\t  Enter service category: ";
-
-	cin >> replyIn;
-**/
-
-	return replyIn;
-
-
-}  // menu
 
 //============================================================================
 
@@ -358,13 +299,8 @@ void setPatientRecords(patientType patients[])
 void setBillRecords(billType bills[])
 {
 
-	// rkt: Prints this line:
-	cout << " set bills record function..." << endl;
-
 	bills[0].setInfo("101", 500, 1500, 1000);
-
 	bills[1].setInfo("202", 400, 1100, 2300);
-
 	bills[2].setInfo("303", 300, 2200, 800);
 
 };  // end: setBillRecords 
