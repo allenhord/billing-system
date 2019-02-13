@@ -1,11 +1,4 @@
-
-//************************************************************
-// Author: D.S. Malik
-//  
-// class personType
-// This class specifies the members to implement a person's 
-// first name and last name.
-//************************************************************
+//header file for personType
  
 #ifndef H_personType
 #define H_personType
@@ -14,6 +7,7 @@
  
 using namespace std;
 
+//definitions for class personType
 class personType
 {
 public:
