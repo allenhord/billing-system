@@ -1,4 +1,4 @@
-
+//header file for class dateType
 #ifndef dateType_H
 #define dateType_H
    
