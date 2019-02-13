@@ -30,11 +30,11 @@ public:
     
     //function to set DOB
     void setBirthDate(int bDay = 1, int bMth = 1, int bYear = 1900);
-    //function to set birth day
+    //function to return birth day
     int getBirthDay();
-    //function to set birth month
+    //function to return birth month
     int getBirthMonth();
-    //function to set birth year
+    //function to return birth year
     int getBirthYear();
     
     //function to set doctor name
