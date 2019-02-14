@@ -171,24 +171,10 @@ billType bills[numberOfPatients];
 	//call function to clear screen
 	clearScreen();
 
-	cout << "\n\n=====================================" << endl;
-	cout << "\n\n  More More ?? \n\n";
-
-	cout << "Is there another update / change to the base data to add??\n\n";
-
-	cout << "=====================================" << endl;
-	cout << "\n\n     Here    Here?? \n\n";
-
-	//call function to pause program
-	userPause();
-	//call function to clear screen
-	clearScreen();
-
 	cout << "\n\n=====================================";
 	cout << "\n\n  Complete.";
 	cout << "\n\n=====================================";
 	cout << "\n\n";
-
 
     return 0;
 

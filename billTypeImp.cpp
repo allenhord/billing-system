@@ -9,10 +9,6 @@ using namespace std;
 //function that prints bill information
 void billType::printBill() const
 {
-
-// RKT: Not printed....
-cout << " printbill " << endl;
-
 	cout << "Patient ID: " << ID <<
 		"\nPharmacy charges: $" << pharmacyCharges <<
 		"\nRoom rent: $" << roomRent <<
@@ -27,9 +23,6 @@ void billType::setInfo(string id, double phCharges, double rRent,
 	pharmacyCharges = phCharges;
 	roomRent = rRent;
 	doctorFee = docFee;
-
-	cout << " ID : " << ID << " roomRent : " << roomRent << endl;
-
 };
 
 //function that sets bill ID
