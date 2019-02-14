@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//Function to set the date
+//Function to set the date of dateType
 void dateType::setDate(int month, int day, int year)
 {
     dMonth = month;
@@ -13,31 +13,31 @@ void dateType::setDate(int month, int day, int year)
     dYear = year;
 }
 
-//Function to return the day
+//Function to return the day of dateType
 int dateType::getDay() const 
 {
     return dDay;
 }
 
-//Function to return the month
+//Function to return the month of dateType
 int dateType::getMonth() const 
 {
     return dMonth;
 }
 
-//Function to return the year
+//Function to return the year of dateType
 int dateType::getYear() const 
 {
     return dYear;
 }
 
-//function to print the date
+//function to print the date of dateType
 void dateType::printDate() const
 {
     cout << dMonth << "-" << dDay << "-" << dYear;
 }
 
-//Constructor with parameters
+//Constructor for dateType with parameters
 dateType::dateType(int month, int day, int year) 
 { 
     dMonth = month;
