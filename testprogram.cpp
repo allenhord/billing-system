@@ -17,11 +17,8 @@ using namespace std;
 
 //===========================================================================
 
-void menu3();
-char menu();
-
+void userPause();
 void clearScreen();
-
 void setPatientRecords(patientType patients[]);
 void setBillRecords(billType bills[]);
 
@@ -29,11 +26,12 @@ void setBillRecords(billType bills[]);
 
 int main() {
 
-const int	numberOfPatients = 3;		// Number of overall patients in system. 
-patientType patients[numberOfPatients];	// Array of patientType class.
-								// Limited by 'numberOfPatients' variable.
-billType bills[numberOfPatients];	// Array of billType class.
-								// Limited by 'numberOfPatients' variable.
+	// Number of overall patients in system. 
+const int	numberOfPatients = 3;
+	// Array of patientType class.  Limited by 'numberOfPatients' variable.
+patientType patients[numberOfPatients];
+	// Array of billType class  Limited by 'numberOfPatients' variable.
+billType bills[numberOfPatients];
 
 //=======================
 	string uID;
@@ -78,13 +76,7 @@ billType bills[numberOfPatients];	// Array of billType class.
 	cout << "=====================================" << endl;
 	patients[2].print();
 
-	cout << "\n\n\t === === === === === === === === ===";
-	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
-	if (cin.get() == '\n') 
-	{
-		; // No Operative
-	}
-
+	userPause();
 	clearScreen();
 
 	cout << "\n\t     Current patient billing data:" << endl << endl;
@@ -95,13 +87,7 @@ billType bills[numberOfPatients];	// Array of billType class.
 	cout << "=====================================" << endl;
 	bills[2].printBill();
 
-	cout << "\n\n\t === === === === === === === === ===";
-	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
-	while ( ! ( cin.get() == '\n') )
-	{
-		; // No Operative
-	}
-
+	userPause();
 	clearScreen();
 
 	udisChDay=patients[0].getDisDay();
@@ -109,7 +95,7 @@ billType bills[numberOfPatients];	// Array of billType class.
 	udisChYear=patients[0].getDisYear();
 
 	cout << "\n=====================================";
-	cout << "\n\n Current discharge date for patient 101.";
+	cout << "\n\n Current discharge date for patient ID: 101.";
 	cout << "\n\n-------------------------------------";
 	cout << "\n\n  Month: " << udisChMth << " Day: " << udisChDay << \
 		" Year: " << udisChYear << "\n";
@@ -121,113 +107,86 @@ billType bills[numberOfPatients];	// Array of billType class.
 	udisChMth=patients[0].getDisMonth();
 	udisChYear=patients[0].getDisYear();
 
-	cout << "\n\nUpdated discharge date for Patient 101.";
+	cout << "\n\nUpdated discharge date for patient ID: 101.";
 	cout << "\n\n-------------------------------------";
 	cout << "\n\n  Month: " << udisChMth << " Day: " << udisChDay << \
 		" Year: " << udisChYear << "\n";
 	cout << "\n=====================================" << endl;
 
-	cout << "\n\n\t === === === === === === === === ===";
-	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
-	while ( ! ( cin.get() == '\n') )
-	{
-		; // No Operative
-	}
+	userPause();
+	clearScreen();
 
+	cout << "\n\n=====================================";
+	cout << "\n\n  Doctor speciality BEFORE update.\n\n";
+  	patients[0].print();
 
+	cout << "\n=====================================";
+	cout << "\n\t\t  UPDATE.";
+  	patients[0].setDoctorSpl( "Medieval Barber" );
+
+	cout << "\n=====================================";
+	cout << "\n\n  Doctor speciality AFTER update.\n\n";
+
+  	patients[0].print();
+
+	userPause();
+	clearScreen();
+
+	cout << "\n\n=====================================";
+	cout << "\n\n  Current balance for patient ID: 303.\n\n";
+	bills[2].printBill();
+
+	cout << "=====================================";
+	cout << "\n\n  New charges added..\n";
+
+	bills[2].updatePharmacyCharges(8000);
+	bills[2].updateRoomRent(145000);
+	bills[2].updateDoctorFee(300000);
+
+	cout << "\n=====================================";
+	cout << "\n\n  New balance for patient ID: 303.\n\n";
+	bills[2].printBill();
+	cout << "=====================================" << endl;
+	cout << "\n  New total balance: $ " << bills[2].billingAmount() << "." << endl;
+
+	userPause();
 	clearScreen();
 
 	cout << "\n\n=====================================" << endl;
-	cout << "\n\n  set  and get billing stuff.\n\n";
+	cout << "\n\n  More More ?? \n\n";
+
+	cout << "Is there another update / change to the base data to add??\n\n";
 
 	cout << "=====================================" << endl;
-	cout << "\n\n  set  and get billing stuff.\n\n";
+	cout << "\n\n     Here    Here?? \n\n";
 
-	cout << "\n\n\t === === === === === === === === ===";
-	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
-	while ( ! ( cin.get() == '\n') )
-	{
-		; // No Operative
-	}
+	userPause();
+	clearScreen();
 
 	cout << "\n\n=====================================";
-	cout << "\n\n  Done.\n\n";
-	cout << "=====================================\n";
+	cout << "\n\n  Complete.";
+	cout << "\n\n=====================================";
+	cout << "\n\n";
 
-
-
-
-//			cout << "\nChange patient data:\nID: ";
-//			cin >> uID;
-
-//			cout << "First name: ";
-//			cin >> ufName;
-//			cout << "Last name: ";
-//			cin >> ulName;
-//			cout << "Birth day: ";
-//			cin >> ubDay;
-//			cout << "Birth month: ";
-//			cin >> ubMth;
-//			cout << "Birth year: ";
-//			cin >> ubYear;
-
-//	cout << "\n\n\t-----------------------------------------------";
-//	cout << "\n\n\t-----------------------------------------------";
-
-//			cout << "Doctor first name: ";		cin >> udocFrName;
-//			cout << "Doctor last name: ";		cin >> udocLaName;
-//			cout << "Doctor speciality: ";		cin >> udocSpl;
-
-//			cout << "Admission day: ";			cin >> uadmDay;
-//			cout << "Admission month: ";		cin >> uadmMth;
-//			cout << "Admission year: ";			cin >> uadmYear;
-
-//			cout << "Discharge day: ";			cin >> udisChDay;
-//			cout << "Discharge month: ";		cin >> udisChMth;
-//			cout << "Discharge year: ";			cin >> udisChYear;
-
-//============================================================================
 
     return 0;
 
 }  // main
 
-//===========================================================================
+//*************************************************************************** 
 
-void menu3()
-{
+void userPause() {
 
-/**
-	cout << "\nChange patient data:\nID: ";
-	cin >> uID;
-
-	cin >> ubYear;
-	cout << "Doctor first name: ";
-	cin >> udocFrName;
-	cout << "Doctor last name: ";
-	cin >> udocLaName;
-	cout << "Doctor speciality: ";
-	cin >> udocSpl;
-	cout << "Admission day: ";
-	cin >> uadmDay;
-	cout << "Admission month: ";
-	cin >> uadmMth;
-	cout << "Admission year: ";
-	cin >> uadmYear;
-
-	cout << "Discharge day: ";
-	cin >> udisChDay;
-	cout << "Discharge month: ";
-	cin >> udisChMth;
-	cout << "Discharge year: ";
-	cin >> udisChYear;
-	cout << endl;
-
-**/
+	cout << "\n\n\t === === === === === === === === ===";
+	cout << "\n\n\t     Press \"Enter Key\" to continue.\n";
+	while ( ! ( cin.get() == '\n') )
+	{
+		; // No Operative
+	}
 
 }
 
-//*************************************************************************** 
+//============================================================================
 
 void clearScreen() {
 
@@ -235,32 +194,6 @@ void clearScreen() {
 	system( CLR );
 
 }
-
-//============================================================================
-
-// cout << "\nChange patient data:\nID: ";
-
-	//	I :	uID;
-
-	//	P : "First name: ";		cin >> ufName;
-	//		"Last name: ";		cin >> ulName;
-	//			cout << "Birth day: ";		cin >> ubDay;
-	//			cout << "Birth month: ";	cin >> ubMth;
-	//			cout << "Birth year: ";		cin >> ubYear;
-
-	//	D :		cout << "Doctor first name: ";		cin >> udocFrName;
-	//			cout << "Doctor last name: ";		cin >> udocLaName;
-	//			cout << "Doctor speciality: ";		cin >> udocSpl;
-
-	//	A :		cout << "Admission day: ";			cin >> uadmDay;
-	//			cout << "Admission month: ";		cin >> uadmMth;
-	//			cout << "Admission year: ";			cin >> uadmYear;
-
-	//	S :		cout << "Discharge day: ";			cin >> udisChDay;
-	//			cout << "Discharge month: ";		cin >> udisChMth;
-	//			cout << "Discharge year: ";			cin >> udisChYear;
-
-//	cout << endl;
 
 //============================================================================
 
