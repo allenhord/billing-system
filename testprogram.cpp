@@ -17,9 +17,13 @@ using namespace std;
 
 //===========================================================================
 
+//function to add a break between screens
 void userPause();
+//function to clear screen entirely
 void clearScreen();
+//aggregate function to set patient records
 void setPatientRecords(patientType patients[]);
+//aggregate function to set bill records
 void setBillRecords(billType bills[]);
 
 //===========================================================================
@@ -34,30 +38,23 @@ patientType patients[numberOfPatients];
 billType bills[numberOfPatients];
 
 //=======================
-	string uID;
-	string ufName;
-	string ulName;
+	string uID;		//variable to store ID
+	string ufName;	//variable to store first name
+	string ulName;	//variable to store last name
 
-	//int ubDay;
-	//int ubMth;
-	//int ubYear;
+	string udocFrName;	//variable to store doctor first name
+	string udocLaName;	//variable to store doctor last name
+	string udocSpl;		//variable to store doctor speciality
 
-	string udocFrName;
-	string udocLaName;
-	string udocSpl;
-
-	//int uadmDay;
-	//int uadmMth;
-	//int uadmYear;
-
-	int udisChDay;
-	int udisChMth;
-	int udisChYear;
+	int udisChDay;	//variable to store discharge day
+	int udisChMth;	//variable to store discharge month
+	int udisChYear;	//variable to store discharge year
 
 //===========================================================================
-
+	//call clear screen function
 	clearScreen();
 
+	//print program greeting
 	cout << "\n\t-------------------------------------------------";
 	cout << "\n\t     Welcome to the Hospital Billing System.";
 	cout << "\n\t-------------------------------------------------" << endl;
@@ -70,30 +67,38 @@ billType bills[numberOfPatients];
 
 	cout << "\n\t     Current patient personal data:" << endl << endl;
 
+	//call functions to print patient data
 	patients[0].print();
 	cout << "=====================================" << endl;
 	patients[1].print();
 	cout << "=====================================" << endl;
 	patients[2].print();
 
+	//call function to pause program
 	userPause();
+	//call function to clear screen
 	clearScreen();
 
 	cout << "\n\t     Current patient billing data:" << endl << endl;
 
+	//calls functions to print bill data
 	bills[0].printBill();
 	cout << "=====================================" << endl;
 	bills[1].printBill();
 	cout << "=====================================" << endl;
 	bills[2].printBill();
 
+	//call function to pause program
 	userPause();
+	//call function to clear screen
 	clearScreen();
 
+	//get discharge date values and set to local variables
 	udisChDay=patients[0].getDisDay();
 	udisChMth=patients[0].getDisMonth();
 	udisChYear=patients[0].getDisYear();
 
+	//print discharge dates for patients
 	cout << "\n=====================================";
 	cout << "\n\n Current discharge date for patient ID: 101.";
 	cout << "\n\n-------------------------------------";
@@ -103,23 +108,29 @@ billType bills[numberOfPatients];
 	// Update Discharge date.
 	patients[0].setDisDate( 10, 21, 3145);
 
+	//get updated discharge date values and set to local variables
 	udisChDay=patients[0].getDisDay();
 	udisChMth=patients[0].getDisMonth();
 	udisChYear=patients[0].getDisYear();
 
+	//print updated discharge dates for patients
 	cout << "\n\nUpdated discharge date for patient ID: 101.";
 	cout << "\n\n-------------------------------------";
 	cout << "\n\n  Month: " << udisChMth << " Day: " << udisChDay << \
 		" Year: " << udisChYear << "\n";
 	cout << "\n=====================================" << endl;
 
+	//call function to pause program
 	userPause();
+	//call function to clear screen
 	clearScreen();
 
+	//call function to print patient data
 	cout << "\n\n=====================================";
 	cout << "\n\n  Doctor speciality BEFORE update.\n\n";
   	patients[0].print();
 
+	//call function to set updated patient data
 	cout << "\n=====================================";
 	cout << "\n\t\t  UPDATE.";
   	patients[0].setDoctorSpl( "Medieval Barber" );
@@ -127,11 +138,15 @@ billType bills[numberOfPatients];
 	cout << "\n=====================================";
 	cout << "\n\n  Doctor speciality AFTER update.\n\n";
 
+	//call function to print updated patient data
   	patients[0].print();
 
+	//call function to pause program
 	userPause();
+	//call function to clear screen
 	clearScreen();
 
+	//call function to print bill for bills[2]
 	cout << "\n\n=====================================";
 	cout << "\n\n  Current balance for patient ID: 303.\n\n";
 	bills[2].printBill();
@@ -139,17 +154,21 @@ billType bills[numberOfPatients];
 	cout << "=====================================";
 	cout << "\n\n  New charges added..\n";
 
+	//call functions to update bill charges for bills[2]
 	bills[2].updatePharmacyCharges(8000);
 	bills[2].updateRoomRent(145000);
 	bills[2].updateDoctorFee(300000);
 
+	//call function to print updated bill for bills[2]
 	cout << "\n=====================================";
 	cout << "\n\n  New balance for patient ID: 303.\n\n";
 	bills[2].printBill();
 	cout << "=====================================" << endl;
 	cout << "\n  New total balance: $ " << bills[2].billingAmount() << "." << endl;
 
+	//call function to pause program
 	userPause();
+	//call function to clear screen
 	clearScreen();
 
 	cout << "\n\n=====================================" << endl;
@@ -160,7 +179,9 @@ billType bills[numberOfPatients];
 	cout << "=====================================" << endl;
 	cout << "\n\n     Here    Here?? \n\n";
 
+	//call function to pause program
 	userPause();
+	//call function to clear screen
 	clearScreen();
 
 	cout << "\n\n=====================================";
@@ -175,6 +196,7 @@ billType bills[numberOfPatients];
 
 //*************************************************************************** 
 
+//definition for pause program function
 void userPause() {
 
 	cout << "\n\n\t === === === === === === === === ===";
@@ -188,6 +210,7 @@ void userPause() {
 
 //============================================================================
 
+//definition for clear screen function
 void clearScreen() {
 
 	// Using a system call to execute 'clear' command.
