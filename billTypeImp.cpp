@@ -28,7 +28,6 @@ void billType::setInfo(string id, double phCharges, double rRent,
 	roomRent = rRent;
 	doctorFee = docFee;
 
-	// RKT: not printed.
 	cout << " ID : " << ID << " roomRent : " << roomRent << endl;
 
 };
