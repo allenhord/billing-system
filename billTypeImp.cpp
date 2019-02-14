@@ -73,7 +73,7 @@ void billType::updateRoomRent(double charges)
 	roomRent=roomRent+charges;
 }
 
-//function tnat sets doctor fee
+//function that sets doctor fee
 void billType::setDoctorFee(double charges)
 {
 	doctorFee=charges;
